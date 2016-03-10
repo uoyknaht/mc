@@ -279,6 +279,7 @@ import App from './components/app/app.cmp';
 import PlaceList from './components/places/placeList/placeList.cmp';
 import PlaceView from './components/places/placeView/placeView.cmp';
 import PlaceAddOrEdit from './components/places/placeAddOrEdit/placeAddOrEdit.cmp';
+import MapContainer from './components/map/mapContainer/mapContainer.cmp';
 import './css/bootstrap.css';
 import './css/animate.css';
 import './css/toastr.scss';
@@ -304,9 +305,9 @@ ReactDOM.render((
   <Provider store={store}>
     <Router history={browserHistory}>
       <Route path="/" component={App}>
-        <Route path="places(?categories=***)" component={PlaceList}/>
+        <Route path="places" component={PlaceList}/>
+        <Route path="maps/:id" component={App}/>
         <Route path="places(?search=***)" component={PlaceList}/>
-        <Route name="placeView" path="places/:id" component={PlaceView}/>
         <Route name="placeCreate" path="places/actions/create" component={PlaceAddOrEdit}/>
         <Route name="placeEdit" path="places/:id/edit" component={PlaceAddOrEdit}/>
       </Route>
